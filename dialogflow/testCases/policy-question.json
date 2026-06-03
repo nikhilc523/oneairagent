@@ -1,0 +1,25 @@
+{
+  "displayName": "Policy Question",
+  "description": "Staff asks a policy question — webhook fires with policy.answer and the raw query.",
+  "testCaseConversationTurns": [
+    {
+      "userInput": {
+        "input": {
+          "text": { "text": "What's the cancellation policy for business class?" }
+        }
+      },
+      "virtualAgentOutput": {
+        "triggeredIntent": {
+          "displayName": "intent.policy"
+        },
+        "currentPage": {
+          "displayName": "Handle Policy Query"
+        },
+        "sessionParameters": {
+          "raw_query": "What's the cancellation policy for business class?"
+        },
+        "expectedFulfillmentTag": "policy.answer"
+      }
+    }
+  ]
+}

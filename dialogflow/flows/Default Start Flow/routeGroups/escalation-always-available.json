@@ -1,0 +1,16 @@
+{
+  "displayName": "escalation-always-available",
+  "description": "Allows staff to escalate from any page without navigating back to Start. Attached to all parameter-collection pages.",
+  "transitionRoutes": [
+    {
+      "intent": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/intents/INTENT_ESCALATE_ID",
+      "triggerFulfillment": {
+        "setParameterActions": [
+          { "parameter": "escalation_reason", "value": "$request.query" }
+        ]
+      },
+      "targetPage": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/flows/FLOW_ID/pages/PAGE_ESCALATION_ID",
+      "description": "Mid-flow escalation — staff can say 'escalate' at any point"
+    }
+  ]
+}

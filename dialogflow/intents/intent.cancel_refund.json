@@ -1,0 +1,142 @@
+{
+  "displayName": "intent.cancel_refund",
+  "description": "Staff wants to cancel a booking and/or check refund eligibility.",
+  "trainingPhrases": [
+    {
+      "parts": [
+        { "text": "Cancel booking " },
+        { "text": "ON-204881", "parameterId": "booking_ref" },
+        { "text": " and process refund" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "I need to cancel " },
+        { "text": "ON-331200", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Refund " },
+        { "text": "ON-204881", "parameterId": "booking_ref" },
+        { "text": " please" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "The customer wants to cancel and get a refund for " },
+        { "text": "ON-550012", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "What's the refund amount for cancelling " },
+        { "text": "ON-204881", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Cancel and refund " },
+        { "text": "ON-100234", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Process a cancellation for " },
+        { "text": "ON-204881", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "How much refund does " },
+        { "text": "ON-771003", "parameterId": "booking_ref" },
+        { "text": " get" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Cancel this booking" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Customer wants their money back for " },
+        { "text": "ON-204881", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Initiate refund for " },
+        { "text": "ON-882211", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Need to cancel a flight and check refund eligibility" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Is " },
+        { "text": "ON-204881", "parameterId": "booking_ref" },
+        { "text": " eligible for a refund" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Can I cancel " },
+        { "text": "ON-443322", "parameterId": "booking_ref" },
+        { "text": " and refund the passenger" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Full cancellation for " },
+        { "text": "ON-204881", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "The passenger no longer needs this flight, cancel " },
+        { "text": "ON-990100", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Void booking " },
+        { "text": "ON-667788", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Process cancellation and refund" }
+      ],
+      "repeatCount": 1
+    }
+  ],
+  "parameters": [
+    {
+      "id": "booking_ref",
+      "entityType": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/entityTypes/booking_ref"
+    }
+  ],
+  "priority": 500000,
+  "isFallback": false
+}

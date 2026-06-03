@@ -1,0 +1,17 @@
+# Render.com deploy config — free tier
+# Push to GitHub, connect the repo in Render dashboard, and it auto-deploys.
+services:
+  - type: web
+    name: oneair-agent-backend
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: cd backend && npm ci && npm run build
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: USE_MOCK_LLM
+        value: "true"
+      - key: USE_MOCK_DB
+        value: "true"

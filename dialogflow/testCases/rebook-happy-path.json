@@ -1,0 +1,26 @@
+{
+  "displayName": "Rebook Happy Path",
+  "description": "Staff provides booking ref and date in one utterance — webhook fires immediately with all params.",
+  "testCaseConversationTurns": [
+    {
+      "userInput": {
+        "input": {
+          "text": { "text": "Rebook ON-204881 to next Friday" }
+        }
+      },
+      "virtualAgentOutput": {
+        "triggeredIntent": {
+          "displayName": "intent.rebook"
+        },
+        "currentPage": {
+          "displayName": "Collect Rebook Params"
+        },
+        "sessionParameters": {
+          "booking_ref": "ON-204881",
+          "new_date": "2026-06-05"
+        },
+        "expectedFulfillmentTag": "rebook.propose"
+      }
+    }
+  ]
+}

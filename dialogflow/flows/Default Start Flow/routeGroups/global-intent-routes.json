@@ -1,0 +1,64 @@
+{
+  "displayName": "global-intent-routes",
+  "description": "Maps each of the 5 use-case intents to its parameter-collection page. Attached to the Start Page. Clears stale parameters on each transition to prevent auto-fill from a previous use case.",
+  "transitionRoutes": [
+    {
+      "intent": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/intents/INTENT_REBOOK_ID",
+      "triggerFulfillment": {
+        "setParameterActions": [
+          { "parameter": "booking_ref", "value": "$intent.params.booking_ref" },
+          { "parameter": "new_date", "value": "$intent.params.new_date" },
+          { "parameter": "new_city", "value": "$intent.params.new_city" }
+        ]
+      },
+      "targetPage": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/flows/FLOW_ID/pages/PAGE_REBOOK_ID",
+      "description": "Route to rebooking — pre-fills any params extracted from the utterance"
+    },
+    {
+      "intent": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/intents/INTENT_CANCEL_REFUND_ID",
+      "triggerFulfillment": {
+        "setParameterActions": [
+          { "parameter": "booking_ref", "value": "$intent.params.booking_ref" },
+          { "parameter": "new_date", "value": null },
+          { "parameter": "new_city", "value": null }
+        ]
+      },
+      "targetPage": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/flows/FLOW_ID/pages/PAGE_CANCEL_ID",
+      "description": "Route to cancellation/refund — clears rebook-specific params"
+    },
+    {
+      "intent": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/intents/INTENT_POLICY_ID",
+      "triggerFulfillment": {
+        "setParameterActions": [
+          { "parameter": "raw_query", "value": "$request.query" },
+          { "parameter": "booking_ref", "value": null }
+        ]
+      },
+      "targetPage": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/flows/FLOW_ID/pages/PAGE_POLICY_ID",
+      "description": "Route to policy — captures full utterance as raw_query"
+    },
+    {
+      "intent": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/intents/INTENT_BOOKING_STATUS_ID",
+      "triggerFulfillment": {
+        "setParameterActions": [
+          { "parameter": "booking_ref", "value": "$intent.params.booking_ref" },
+          { "parameter": "new_date", "value": null },
+          { "parameter": "new_city", "value": null }
+        ]
+      },
+      "targetPage": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/flows/FLOW_ID/pages/PAGE_STATUS_ID",
+      "description": "Route to booking status — clears rebook-specific params"
+    },
+    {
+      "intent": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/intents/INTENT_ESCALATE_ID",
+      "triggerFulfillment": {
+        "setParameterActions": [
+          { "parameter": "escalation_reason", "value": "$request.query" },
+          { "parameter": "booking_ref", "value": null }
+        ]
+      },
+      "targetPage": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/flows/FLOW_ID/pages/PAGE_ESCALATION_ID",
+      "description": "Route to escalation — captures reason from utterance"
+    }
+  ]
+}

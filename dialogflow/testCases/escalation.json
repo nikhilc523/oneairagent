@@ -1,0 +1,25 @@
+{
+  "displayName": "Escalation",
+  "description": "Staff requests escalation — webhook fires immediately with escalate.propose.",
+  "testCaseConversationTurns": [
+    {
+      "userInput": {
+        "input": {
+          "text": { "text": "I need to escalate this, the customer is threatening legal action" }
+        }
+      },
+      "virtualAgentOutput": {
+        "triggeredIntent": {
+          "displayName": "intent.escalate"
+        },
+        "currentPage": {
+          "displayName": "Handle Escalation"
+        },
+        "sessionParameters": {
+          "escalation_reason": "I need to escalate this, the customer is threatening legal action"
+        },
+        "expectedFulfillmentTag": "escalate.propose"
+      }
+    }
+  ]
+}

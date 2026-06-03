@@ -1,0 +1,76 @@
+{
+  "displayName": "Default Start Flow",
+  "description": "Entry point flow. Classifies staff messages into 5 use cases via route groups and transitions to the appropriate parameter-collection page.",
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.4,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC"
+  },
+  "transitionRouteGroups": [
+    "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/flows/FLOW_ID/transitionRouteGroups/global-intent-routes"
+  ],
+  "eventHandlers": [
+    {
+      "event": "sys.no-match-default",
+      "triggerFulfillment": {
+        "webhook": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/webhooks/WEBHOOK_ID",
+        "tag": "fallback.general",
+        "setParameterActions": [
+          {
+            "parameter": "raw_query",
+            "value": "$request.query"
+          }
+        ]
+      }
+    },
+    {
+      "event": "sys.no-match-2",
+      "triggerFulfillment": {
+        "messages": [
+          {
+            "text": {
+              "text": [
+                "I'm having trouble understanding. I can help with:\n- **Rebooking** a passenger to a different flight or date\n- **Cancellation & refund** eligibility\n- **Policy questions** (cancellation, baggage, delays, etc.)\n- **Booking status** lookup\n- **Escalation** to a supervisor\n\nYou can also say 'escalate' to get a human."
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event": "sys.no-match-3",
+      "triggerFulfillment": {
+        "messages": [
+          {
+            "text": {
+              "text": ["Let me connect you with a team member who can help."]
+            }
+          }
+        ],
+        "webhook": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/webhooks/WEBHOOK_ID",
+        "tag": "escalate.propose",
+        "setParameterActions": [
+          {
+            "parameter": "escalation_reason",
+            "value": "Auto-escalation: repeated no-match"
+          }
+        ]
+      }
+    },
+    {
+      "event": "sys.no-input-default",
+      "triggerFulfillment": {
+        "messages": [
+          {
+            "text": {
+              "text": ["I'm still here. What can I help you with?"]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "_meta": {
+    "note": "The Start Page has no explicit JSON file — it is the built-in entry page of this flow. Its behavior is defined by the flow-level event handlers and route groups above. The 'returning' session parameter controls whether the welcome message shows 'Welcome' vs 'What else can I help with?'"
+  }
+}

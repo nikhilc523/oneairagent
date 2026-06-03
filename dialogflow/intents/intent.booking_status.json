@@ -1,0 +1,134 @@
+{
+  "displayName": "intent.booking_status",
+  "description": "Staff wants to check a booking's status or itinerary — read-only lookup.",
+  "trainingPhrases": [
+    {
+      "parts": [
+        { "text": "What's the status of " },
+        { "text": "ON-204881", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Look up booking " },
+        { "text": "ON-331200", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Is " },
+        { "text": "ON-204881", "parameterId": "booking_ref" },
+        { "text": " confirmed" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Check booking " },
+        { "text": "ON-550012", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Show me the itinerary for " },
+        { "text": "ON-204881", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Where is booking " },
+        { "text": "ON-100234", "parameterId": "booking_ref" },
+        { "text": " flying to" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "When does " },
+        { "text": "ON-771003", "parameterId": "booking_ref" },
+        { "text": " depart" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Pull up " },
+        { "text": "ON-204881", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "What flight is " },
+        { "text": "ON-882211", "parameterId": "booking_ref" },
+        { "text": " on" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Get booking details for " },
+        { "text": "ON-204881", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Is this booking still active " },
+        { "text": "ON-443322", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Check the status of a booking" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "I need to look up a reservation" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "What's the departure time for " },
+        { "text": "ON-990100", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Show me the passenger details on " },
+        { "text": "ON-667788", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Flight info for " },
+        { "text": "ON-204881", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Booking lookup" }
+      ],
+      "repeatCount": 1
+    }
+  ],
+  "parameters": [
+    {
+      "id": "booking_ref",
+      "entityType": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/entityTypes/booking_ref"
+    }
+  ],
+  "priority": 500000,
+  "isFallback": false
+}

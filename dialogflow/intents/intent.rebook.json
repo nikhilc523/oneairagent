@@ -1,0 +1,191 @@
+{
+  "displayName": "intent.rebook",
+  "description": "Staff wants to rebook/reschedule a passenger to a different flight or date.",
+  "trainingPhrases": [
+    {
+      "parts": [
+        { "text": "I need to rebook " },
+        { "text": "ON-204881", "parameterId": "booking_ref" },
+        { "text": " to " },
+        { "text": "next Friday", "parameterId": "new_date" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Change booking " },
+        { "text": "ON-331200", "parameterId": "booking_ref" },
+        { "text": " to " },
+        { "text": "March 15th", "parameterId": "new_date" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Move " },
+        { "text": "ON-100234", "parameterId": "booking_ref" },
+        { "text": " to " },
+        { "text": "tomorrow", "parameterId": "new_date" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Can you rebook " },
+        { "text": "ON-550012", "parameterId": "booking_ref" },
+        { "text": " for " },
+        { "text": "December 3rd", "parameterId": "new_date" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "I want to change the flight date for " },
+        { "text": "ON-204881", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Rebook this passenger to " },
+        { "text": "next week", "parameterId": "new_date" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Need to move booking " },
+        { "text": "ON-771003", "parameterId": "booking_ref" },
+        { "text": " to " },
+        { "text": "January 20", "parameterId": "new_date" },
+        { "text": " flying into " },
+        { "text": "Miami", "parameterId": "new_city" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Change the flight for " },
+        { "text": "ON-204881", "parameterId": "booking_ref" },
+        { "text": " to " },
+        { "text": "next Monday", "parameterId": "new_date" },
+        { "text": " to " },
+        { "text": "LAX", "parameterId": "new_city" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Reschedule " },
+        { "text": "ON-882211", "parameterId": "booking_ref" },
+        { "text": " please" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "The customer wants a different date for " },
+        { "text": "ON-204881", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Rebook " },
+        { "text": "ON-443322", "parameterId": "booking_ref" },
+        { "text": " to " },
+        { "text": "the 5th", "parameterId": "new_date" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Move this booking to a later flight on " },
+        { "text": "Wednesday", "parameterId": "new_date" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Can we change " },
+        { "text": "ON-204881", "parameterId": "booking_ref" },
+        { "text": " departure to " },
+        { "text": "June 10", "parameterId": "new_date" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Flight change needed for " },
+        { "text": "ON-990100", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Switch " },
+        { "text": "ON-204881", "parameterId": "booking_ref" },
+        { "text": " to fly to " },
+        { "text": "Chicago", "parameterId": "new_city" },
+        { "text": " on " },
+        { "text": "April 2nd", "parameterId": "new_date" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "The passenger on " },
+        { "text": "ON-204881", "parameterId": "booking_ref" },
+        { "text": " needs to fly on a different day" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Rebook to " },
+        { "text": "SFO", "parameterId": "new_city" },
+        { "text": " on " },
+        { "text": "next Thursday", "parameterId": "new_date" },
+        { "text": " for " },
+        { "text": "ON-204881", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Need a date change" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Change flight to " },
+        { "text": "tomorrow", "parameterId": "new_date" }
+      ],
+      "repeatCount": 1
+    },
+    {
+      "parts": [
+        { "text": "Rebooking request for " },
+        { "text": "ON-667788", "parameterId": "booking_ref" }
+      ],
+      "repeatCount": 1
+    }
+  ],
+  "parameters": [
+    {
+      "id": "booking_ref",
+      "entityType": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/entityTypes/booking_ref"
+    },
+    {
+      "id": "new_date",
+      "entityType": "projects/-/locations/-/agents/-/entityTypes/sys.date"
+    },
+    {
+      "id": "new_city",
+      "entityType": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/entityTypes/city"
+    }
+  ],
+  "priority": 500000,
+  "isFallback": false
+}

@@ -1,0 +1,71 @@
+{
+  "displayName": "city",
+  "kind": "KIND_MAP",
+  "autoExpansionMode": "AUTO_EXPANSION_MODE_DEFAULT",
+  "enableFuzzyExtraction": true,
+  "entities": [
+    {
+      "value": "New York",
+      "synonyms": ["New York", "NYC", "JFK", "LGA", "EWR", "New York City"]
+    },
+    {
+      "value": "Los Angeles",
+      "synonyms": ["Los Angeles", "LA", "LAX"]
+    },
+    {
+      "value": "Chicago",
+      "synonyms": ["Chicago", "CHI", "ORD", "MDW", "O'Hare", "Midway"]
+    },
+    {
+      "value": "Miami",
+      "synonyms": ["Miami", "MIA"]
+    },
+    {
+      "value": "San Francisco",
+      "synonyms": ["San Francisco", "SFO", "SF", "San Fran"]
+    },
+    {
+      "value": "Dallas",
+      "synonyms": ["Dallas", "DFW", "Dallas Fort Worth"]
+    },
+    {
+      "value": "Atlanta",
+      "synonyms": ["Atlanta", "ATL"]
+    },
+    {
+      "value": "Denver",
+      "synonyms": ["Denver", "DEN"]
+    },
+    {
+      "value": "Seattle",
+      "synonyms": ["Seattle", "SEA"]
+    },
+    {
+      "value": "Boston",
+      "synonyms": ["Boston", "BOS"]
+    },
+    {
+      "value": "London",
+      "synonyms": ["London", "LHR", "LGW", "STN", "Heathrow", "Gatwick"]
+    },
+    {
+      "value": "Dubai",
+      "synonyms": ["Dubai", "DXB"]
+    },
+    {
+      "value": "Tokyo",
+      "synonyms": ["Tokyo", "NRT", "HND", "Narita", "Haneda"]
+    },
+    {
+      "value": "Paris",
+      "synonyms": ["Paris", "CDG", "ORY", "Charles de Gaulle"]
+    },
+    {
+      "value": "Singapore",
+      "synonyms": ["Singapore", "SIN", "Changi"]
+    }
+  ],
+  "_meta": {
+    "note": "City entity with airport code synonyms. Auto-expansion is enabled so CX can recognize unlisted cities via ML. Fuzzy matching handles typos."
+  }
+}

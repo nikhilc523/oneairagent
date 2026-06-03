@@ -1,0 +1,18 @@
+{
+  "displayName": "Handle Escalation",
+  "description": "Handles escalation requests. No required parameters — fires the webhook immediately. The escalation_reason is optional and captured from the user's utterance via the route preset.",
+  "transitionRoutes": [
+    {
+      "condition": "true",
+      "triggerFulfillment": {
+        "webhook": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/webhooks/WEBHOOK_ID",
+        "tag": "escalate.propose",
+        "setParameterActions": [
+          { "parameter": "returning", "value": true }
+        ]
+      },
+      "targetPage": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/flows/FLOW_ID/pages/START_PAGE",
+      "description": "Unconditional — fire webhook immediately and return to Start"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "displayName": "oneair-webhook",
+  "genericWebService": {
+    "uri": "https://BACKEND_HOST/dialogflow/webhook",
+    "requestHeaders": {},
+    "allowedCaCerts": [],
+    "httpMethod": "POST"
+  },
+  "timeout": "10s",
+  "disabled": false,
+  "_meta": {
+    "note": "Single webhook for all fulfillment tags. Replace BACKEND_HOST with your backend URL. For local dev, use ngrok: 'ngrok http 3000' and set the forwarding URL here. Tags: rebook.propose, refund.propose, policy.answer, booking.status, escalate.propose, fallback.general."
+  }
+}

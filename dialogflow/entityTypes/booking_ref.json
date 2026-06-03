@@ -1,0 +1,15 @@
+{
+  "displayName": "booking_ref",
+  "kind": "KIND_REGEXP",
+  "autoExpansionMode": "AUTO_EXPANSION_MODE_UNSPECIFIED",
+  "entities": [
+    {
+      "value": "ON-\\d{6}",
+      "synonyms": ["ON-\\d{6}"]
+    }
+  ],
+  "enableFuzzyExtraction": false,
+  "_meta": {
+    "note": "Regexp entity matching OneAir booking references: ON- followed by exactly 6 digits. Examples: ON-204881, ON-100234, ON-999001."
+  }
+}

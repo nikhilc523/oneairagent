@@ -1,0 +1,19 @@
+{
+  "displayName": "action_confirmation",
+  "kind": "KIND_MAP",
+  "autoExpansionMode": "AUTO_EXPANSION_MODE_UNSPECIFIED",
+  "enableFuzzyExtraction": true,
+  "entities": [
+    {
+      "value": "yes",
+      "synonyms": ["yes", "yeah", "yep", "yup", "correct", "that's right", "affirmative", "sure", "please", "go ahead", "do it", "confirm", "absolutely", "right", "ok", "okay"]
+    },
+    {
+      "value": "no",
+      "synonyms": ["no", "nope", "nah", "cancel", "never mind", "stop", "don't", "wrong", "incorrect", "not that", "no thanks", "negative"]
+    }
+  ],
+  "_meta": {
+    "note": "Used for conversational clarifications within CX (e.g., 'did you mean this booking?'). NOT used for HITL confirm/reject — that goes over WebSocket between app and backend."
+  }
+}

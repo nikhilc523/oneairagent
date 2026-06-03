@@ -1,0 +1,73 @@
+{
+  "displayName": "intent.escalate",
+  "description": "Staff wants to escalate the case to a supervisor or specialist team.",
+  "trainingPhrases": [
+    {
+      "parts": [{ "text": "I need to escalate this" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "Transfer to a supervisor" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "This needs a manager" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "I can't handle this case" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "The customer is very upset and wants a supervisor" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "Escalate this to a senior agent" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "I want to hand this off" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "This is too complex for me" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "Get me a human please" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "I need help with this one" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "This case needs special attention" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "Route this to the complaints team" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "The passenger is threatening legal action" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "I'm not authorized to handle this" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "This is beyond my scope" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "Urgent escalation needed" }],
+      "repeatCount": 1
+    }
+  ],
+  "parameters": [],
+  "priority": 500000,
+  "isFallback": false
+}

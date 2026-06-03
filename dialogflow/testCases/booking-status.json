@@ -1,0 +1,25 @@
+{
+  "displayName": "Booking Status",
+  "description": "Staff checks a booking status — read-only webhook fires with booking.status.",
+  "testCaseConversationTurns": [
+    {
+      "userInput": {
+        "input": {
+          "text": { "text": "What's the status of ON-204881" }
+        }
+      },
+      "virtualAgentOutput": {
+        "triggeredIntent": {
+          "displayName": "intent.booking_status"
+        },
+        "currentPage": {
+          "displayName": "Collect Status Params"
+        },
+        "sessionParameters": {
+          "booking_ref": "ON-204881"
+        },
+        "expectedFulfillmentTag": "booking.status"
+      }
+    }
+  ]
+}

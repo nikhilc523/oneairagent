@@ -1,0 +1,54 @@
+{
+  "displayName": "Rebook With Slot Filling",
+  "description": "Staff says 'rebook' without params — CX collects booking_ref and new_date via prompts.",
+  "testCaseConversationTurns": [
+    {
+      "userInput": {
+        "input": {
+          "text": { "text": "I need to change a flight" }
+        }
+      },
+      "virtualAgentOutput": {
+        "triggeredIntent": {
+          "displayName": "intent.rebook"
+        },
+        "currentPage": {
+          "displayName": "Collect Rebook Params"
+        },
+        "textResponses": [
+          "I'll help you with the rebooking.",
+          "What's the booking reference? It should look like ON-XXXXXX."
+        ]
+      }
+    },
+    {
+      "userInput": {
+        "input": {
+          "text": { "text": "ON-331200" }
+        }
+      },
+      "virtualAgentOutput": {
+        "sessionParameters": {
+          "booking_ref": "ON-331200"
+        },
+        "textResponses": [
+          "What date should I rebook to?"
+        ]
+      }
+    },
+    {
+      "userInput": {
+        "input": {
+          "text": { "text": "Next Wednesday" }
+        }
+      },
+      "virtualAgentOutput": {
+        "sessionParameters": {
+          "booking_ref": "ON-331200",
+          "new_date": "2026-06-03"
+        },
+        "expectedFulfillmentTag": "rebook.propose"
+      }
+    }
+  ]
+}

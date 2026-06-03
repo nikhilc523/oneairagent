@@ -1,0 +1,81 @@
+{
+  "displayName": "intent.policy",
+  "description": "Staff asks a policy question — routed to RAG retrieval + LLM for a grounded answer.",
+  "trainingPhrases": [
+    {
+      "parts": [{ "text": "What's the cancellation policy" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "What is the refund policy for economy tickets" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "Do passengers get hotel vouchers for delays" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "How long before departure can you cancel for free" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "What's the rebooking fee" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "Is there a cancellation fee for business class" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "What are the baggage rules" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "Tell me about the change fee policy" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "Can a passenger cancel within 24 hours for free" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "What does the policy say about weather delays" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "Are refunds available for non-refundable tickets" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "What's our compensation policy for overbooking" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "How does the no-show policy work" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "What are the rules for unaccompanied minors" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "Policy on missed connections" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "What does the fare rules say about upgrades" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "Is travel insurance refundable" }],
+      "repeatCount": 1
+    },
+    {
+      "parts": [{ "text": "What's our policy on medical cancellations" }],
+      "repeatCount": 1
+    }
+  ],
+  "parameters": [],
+  "priority": 500000,
+  "isFallback": false
+}

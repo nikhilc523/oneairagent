@@ -1,0 +1,23 @@
+{
+  "displayName": "Fallback No Match",
+  "description": "Unrecognized input triggers the fallback webhook instead of a canned error.",
+  "testCaseConversationTurns": [
+    {
+      "userInput": {
+        "input": {
+          "text": { "text": "the customer is really unhappy about the delay" }
+        }
+      },
+      "virtualAgentOutput": {
+        "triggeredIntent": null,
+        "currentPage": {
+          "displayName": "Start Page"
+        },
+        "sessionParameters": {
+          "raw_query": "the customer is really unhappy about the delay"
+        },
+        "expectedFulfillmentTag": "fallback.general"
+      }
+    }
+  ]
+}

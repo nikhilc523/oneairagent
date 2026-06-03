@@ -1,0 +1,20 @@
+{
+  "displayName": "End Session",
+  "description": "Terminal page. Displays a goodbye message and ends the session.",
+  "entryFulfillment": {
+    "messages": [
+      {
+        "text": {
+          "text": ["Session closed. Start a new conversation anytime."]
+        }
+      }
+    ]
+  },
+  "transitionRoutes": [
+    {
+      "condition": "true",
+      "targetPage": "END_SESSION",
+      "description": "Transition to built-in END_SESSION terminal page"
+    }
+  ]
+}

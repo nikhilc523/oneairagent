@@ -1,0 +1,89 @@
+{
+  "displayName": "Collect Cancel Params",
+  "description": "Collects booking_ref (required) for a cancellation/refund request. When filled, calls the webhook with tag refund.propose.",
+  "entryFulfillment": {
+    "messages": [
+      {
+        "text": {
+          "text": ["I'll look into cancellation and refund options."]
+        }
+      }
+    ]
+  },
+  "form": {
+    "parameters": [
+      {
+        "displayName": "booking_ref",
+        "entityType": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/entityTypes/booking_ref",
+        "required": true,
+        "fillBehavior": {
+          "initialPromptFulfillment": {
+            "messages": [
+              {
+                "text": {
+                  "text": ["Which booking should I cancel? Please provide the reference number (ON-XXXXXX)."]
+                }
+              }
+            ]
+          },
+          "repromptEventHandlers": [
+            {
+              "event": "sys.no-match-1",
+              "triggerFulfillment": {
+                "messages": [
+                  {
+                    "text": {
+                      "text": ["I need the booking reference in the format ON-XXXXXX, like ON-204881."]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "event": "sys.no-match-2",
+              "triggerFulfillment": {
+                "messages": [
+                  {
+                    "text": {
+                      "text": ["I still couldn't find a booking reference. Please check the format: ON- followed by 6 digits. Say 'escalate' if you need help."]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "redact": false
+      }
+    ]
+  },
+  "transitionRoutes": [
+    {
+      "condition": "$page.params.status = \"FINAL\"",
+      "triggerFulfillment": {
+        "webhook": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/webhooks/WEBHOOK_ID",
+        "tag": "refund.propose",
+        "setParameterActions": [
+          { "parameter": "returning", "value": true }
+        ]
+      },
+      "targetPage": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/flows/FLOW_ID/pages/START_PAGE",
+      "description": "Booking ref collected — call webhook and return to Start"
+    }
+  ],
+  "transitionRouteGroups": [
+    "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/flows/FLOW_ID/transitionRouteGroups/escalation-always-available"
+  ],
+  "eventHandlers": [
+    {
+      "event": "sys.no-match-default",
+      "triggerFulfillment": {
+        "webhook": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/webhooks/WEBHOOK_ID",
+        "tag": "fallback.general",
+        "setParameterActions": [
+          { "parameter": "raw_query", "value": "$request.query" }
+        ]
+      }
+    }
+  ]
+}

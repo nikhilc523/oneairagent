@@ -1,0 +1,22 @@
+{
+  "displayName": "OneAir Operations Agent",
+  "defaultLanguageCode": "en",
+  "timeZone": "America/New_York",
+  "description": "Internal operations agent for OneAir staff. Routes intents, collects parameters, delegates to backend via webhook. Does NOT generate AI answers — that is the backend LLM's job.",
+  "enableStackdriverLogging": true,
+  "supportedLanguageCodes": [],
+  "speechToTextSettings": {
+    "enableSpeechAdaptation": false
+  },
+  "startFlow": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/flows/Default Start Flow",
+  "advancedSettings": {
+    "loggingSettings": {
+      "enableStackdriverLogging": true,
+      "enableInteractionLogging": true
+    }
+  },
+  "textToSpeechSettings": {},
+  "_meta": {
+    "note": "Replace PROJECT_ID and AGENT_ID with your GCP project and agent IDs after creation. Classification threshold is set in the flow-level NLU settings."
+  }
+}

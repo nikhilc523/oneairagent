@@ -1,0 +1,54 @@
+{
+  "displayName": "Handle Policy Query",
+  "description": "Handles policy questions via RAG + LLM. The raw_query parameter is auto-filled from the user's utterance via the route preset, so the webhook fires immediately without an extra prompt turn.",
+  "form": {
+    "parameters": [
+      {
+        "displayName": "raw_query",
+        "entityType": "projects/-/locations/-/agents/-/entityTypes/sys.any",
+        "required": true,
+        "fillBehavior": {
+          "initialPromptFulfillment": {
+            "messages": [
+              {
+                "text": {
+                  "text": ["What policy question can I help you with?"]
+                }
+              }
+            ]
+          }
+        },
+        "redact": false
+      }
+    ]
+  },
+  "transitionRoutes": [
+    {
+      "condition": "$page.params.status = \"FINAL\"",
+      "triggerFulfillment": {
+        "webhook": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/webhooks/WEBHOOK_ID",
+        "tag": "policy.answer",
+        "setParameterActions": [
+          { "parameter": "returning", "value": true }
+        ]
+      },
+      "targetPage": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/flows/FLOW_ID/pages/START_PAGE",
+      "description": "Query captured — call webhook for RAG answer and return to Start"
+    }
+  ],
+  "transitionRouteGroups": [
+    "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/flows/FLOW_ID/transitionRouteGroups/escalation-always-available"
+  ],
+  "eventHandlers": [
+    {
+      "event": "sys.no-match-default",
+      "triggerFulfillment": {
+        "webhook": "projects/PROJECT_ID/locations/us-central1/agents/AGENT_ID/webhooks/WEBHOOK_ID",
+        "tag": "fallback.general",
+        "setParameterActions": [
+          { "parameter": "raw_query", "value": "$request.query" }
+        ]
+      }
+    }
+  ]
+}

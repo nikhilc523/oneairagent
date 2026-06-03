@@ -1,0 +1,25 @@
+{
+  "displayName": "Refund Happy Path",
+  "description": "Staff requests cancellation with booking ref — webhook fires with refund.propose.",
+  "testCaseConversationTurns": [
+    {
+      "userInput": {
+        "input": {
+          "text": { "text": "Cancel ON-204881 and refund" }
+        }
+      },
+      "virtualAgentOutput": {
+        "triggeredIntent": {
+          "displayName": "intent.cancel_refund"
+        },
+        "currentPage": {
+          "displayName": "Collect Cancel Params"
+        },
+        "sessionParameters": {
+          "booking_ref": "ON-204881"
+        },
+        "expectedFulfillmentTag": "refund.propose"
+      }
+    }
+  ]
+}
