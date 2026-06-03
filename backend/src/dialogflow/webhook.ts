@@ -7,13 +7,21 @@ export function createWebhookRouter(orchestrator: Orchestrator): Router {
 
   router.post('/webhook', async (req: Request, res: Response) => {
     const body = req.body as WebhookRequest;
-    const tag = body.fulfillmentInfo?.tag;
-    const params = body.sessionInfo?.parameters || {};
-    const sessionId = body.sessionInfo?.session || 'unknown-session';
-    const actorId = 'staff-user'; // In prod: extract from auth token
-    const rawText = body.text || '';
+    // Dialogflow CX webhook request can have the tag in fulfillmentInfo.tag
+    const rawBody = req.body;
+    const tag = (
+      rawBody.fulfillmentInfo?.tag ||
+      rawBody.FulfillmentInfo?.tag ||
+      ''
+    ).trim();
+    const params = rawBody.sessionInfo?.parameters || rawBody.SessionInfo?.parameters || {};
+    const sessionId = rawBody.sessionInfo?.session || rawBody.SessionInfo?.session || 'unknown-session';
+    const actorId = 'staff-user';
+    const rawText = rawBody.text || rawBody.Text || '';
 
-    console.log(`[webhook] tag=${tag} session=${sessionId.slice(-12)} params=${JSON.stringify(params)}`);
+    // Debug logging — check Render logs to see what CX actually sends
+    console.log(`[webhook] FULL BODY: ${JSON.stringify(rawBody).slice(0, 500)}`);
+    console.log(`[webhook] tag="${tag}" params=${JSON.stringify(params)}`);
 
     let result;
 
